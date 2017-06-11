@@ -5,11 +5,16 @@ public class BinaryHeap {
 	public static void main(String[] args) {
 		int[] heap = {23, 43, 26, 10, 21, 13, 31, 16, 12, 8, 29, 11, 19, 17};
 		buildHeap(heap);
+		System.out.println("Constructed heap:");
 		for (int i = 0; i < heap.length; i++) {
 			System.out.print(heap[i]+" ");
 		}
 		System.out.println();
+		System.out.println("Sorted in descending order:");
 		sort(heap);
+		for (int k = 0; k < heap.length; k++) {
+			System.out.print(heap[k]+" ");
+		}
 	}
 	
 	private static void buildHeap(int[] heap) {
@@ -27,11 +32,6 @@ public class BinaryHeap {
 			
 			swap(0, N-i, heap);			
 			heapify(0, N-i, heap);
-			
-			for (int k = 0; k < N; k++) {
-				System.out.print(heap[k]+" ");
-			}
-			System.out.println();
 		}
 	}
 	
